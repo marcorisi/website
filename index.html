@@ -43,10 +43,20 @@
       .social > a {
         margin: 10px;
         color: rgba(255, 255, 255, 0.6);
-        transition: color ease 0.2s;
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        padding: 5px;
+        -webkit-transition: color ease 0.3s, border ease 0.3s;
+        -moz-transition: color ease 0.3s, border ease 0.3s;
+        -o-transition: color ease 0.3s, border ease 0.3s;
+        transition: color ease 0.3s, border ease 0.3s;
       }
       .social > a:hover {
         color: inherit;
+        border-color: inherit;
       }
       .container {
         width: 640px;
