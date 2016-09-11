@@ -18,11 +18,16 @@
         font-family: 'Roboto', sans-serif;
       }
       #gravatar {
-        background-image: url('http://www.gravatar.com/avatar/9f12a1ce584f4a232605a72225d7f608?s=200');
+        background-image: url('wacom-avatar-website.png');
+        background-size: cover;
         width: 200px;
         height: 200px;
         border-radius: 50%;
         margin: 150px auto 50px;
+        transition: background ease 0.5s;
+      }
+      #gravatar:hover {
+        background-image: url('http://www.gravatar.com/avatar/9f12a1ce584f4a232605a72225d7f608?s=200');
       }
       .name {
         text-transform: uppercase;
