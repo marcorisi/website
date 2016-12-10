@@ -26,9 +26,6 @@
         margin: 150px auto 50px;
         transition: background ease 0.5s;
       }
-      #gravatar:hover {
-        background-image: url('http://www.gravatar.com/avatar/9f12a1ce584f4a232605a72225d7f608?s=200');
-      }
       .name {
         text-transform: uppercase;
         font-size: 48px;
@@ -58,10 +55,6 @@
         -o-transition: color ease 0.3s, border ease 0.3s;
         transition: color ease 0.3s, border ease 0.3s;
       }
-      .social > a:hover {
-        color: inherit;
-        border-color: inherit;
-      }
       .container {
         width: 640px;
         margin: auto;
@@ -87,6 +80,15 @@
         .social a {
           margin: 5px;
         }
+      }
+
+      /** HOVER, disabled on touch devices **/
+      body:not(.touch) .social > a:hover {
+        color: inherit;
+        border-color: inherit;
+      }
+      body:not(.touch) #gravatar:hover {
+        background-image: url('http://www.gravatar.com/avatar/9f12a1ce584f4a232605a72225d7f608?s=200');
       }
     </style>
 
@@ -118,6 +120,16 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-88772649-1', 'auto');
       ga('send', 'pageview');
+    </script>
+
+    <script>
+    /** detect touch device */
+    var touch = 'ontouchstart' in document.documentElement
+            || (navigator.MaxTouchPoints > 0)
+            || (navigator.msMaxTouchPoints > 0);
+    if ( touch ) {
+      document.body.className += ' touch';
+    }
     </script>
   </body>
 </html>
